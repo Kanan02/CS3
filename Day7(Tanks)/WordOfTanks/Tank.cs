@@ -2,21 +2,15 @@
 using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Threading;
 
 namespace MyClassLib.WordOfTanks
 {
     
     class Tank
     {
-        private static readonly Random random = new Random();
-        private static readonly object syncLock = new object();
-        private static int RandomNumber(int min, int max)
-        {
-            lock (syncLock)
-            { 
-                return random.Next(min, max);
-            }
-        }
+     
+        
         public string Name { get; set; }
        
         public int AmmunitionLevel { get; set; }
@@ -26,10 +20,11 @@ namespace MyClassLib.WordOfTanks
         
         public Tank(string name)
         {
-            AmmunitionLevel = RandomNumber(0, 100);
-            Armor = RandomNumber(0, 100);
-            Maneuverability = RandomNumber(0, 100);
-
+            Random random = new Random();
+            AmmunitionLevel =random.Next(0,100);
+            Armor = random.Next(0, 100);
+            Maneuverability = random.Next(0, 100);
+            Thread.Sleep(10);
             Name = name;
             
         }

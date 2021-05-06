@@ -28,15 +28,7 @@ namespace Day7_Tanks_
                 new Tank("Pantera"),
                 new Tank("Pantera")
              };
-            //foreach (var item in tanks1)
-            //{
-            //    Console.WriteLine(item);
-            //}
-            //Console.WriteLine();
-            //foreach (var item in tanks2)
-            //{
-            //    Console.WriteLine(item);
-            //}
+            
             for (int i = 0; i < tanks1.Length; i++)
             {
                 Console.WriteLine(tanks1[i]*tanks2[i]);
